@@ -27,20 +27,52 @@ The next flip-flop need only “recognize” that the first flip-flop’s Q outp
 However, the remaining flip-flops should be made ready to toggle only when all lower-order output bits are “high,” thus the need for AND gates.
 
 **Procedure**
-
-/* write all the steps invloved */
+```
+• Write and draw th e Digital lo gic system.  
+• Write t he Verilog code for above system .  
+• Enter th e Verilog c ode in Xilinx softwar e.  
+• Check the syntax a nd simulat e the above verilog cod e (using ModelSim or Xilinx) 
+and verify the outp ut waveform as obtain ed.  
+• Implem ent the above code in Spartan II u sing FPGA kit.
+```
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. 
-
-Developed by: RegisterNumber:
+/* Program for flipflops and verify its truth table in quartus using Verilog programming.
+```
+module exp11(out,clk,rst);
+input clk,rst;
+output reg [3:0]out;
+always @ (posedge clk)
+begin
+   if(rst)
+     out<=0;
+   else 
+     out <= out+1;
+end
+endmodule
+```
+```
+Developed by: M.Mahalakshmi
+RegisterNumber:24900868
+```
 */
 
 **RTL LOGIC UP COUNTER**
 
+![Screenshot 2024-12-21 115019](https://github.com/user-attachments/assets/0315cde1-0fca-4613-b681-f721893824a0)
+
+
 **TIMING DIAGRAM FOR IP COUNTER**
+
+![Screenshot 2024-12-21 120447](https://github.com/user-attachments/assets/0f1716ff-2743-45e4-a6ee-6d7506e0a204)
+
 
 **TRUTH TABLE**
 
+![Screenshot 2024-12-21 120355](https://github.com/user-attachments/assets/00167567-1b50-46a8-906d-0e94a28a85c5)
+
+
 **RESULTS**
+
+Hence implemented 4 bit synchronous up counter and validate functionality.
